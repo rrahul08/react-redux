@@ -23,14 +23,15 @@ const Body = () => {
           <div className='mt-20 ml-10' key={category.id}> {/* Use unique ID as key */}
            <h1 className='text-xl font-semibold'> {category.name} :</h1>
             {category['menu-items'].map((menu)=>(
-            <div className='mt-10 ml-10 mr-[200px] gap-2' key={menu.id}>
-              <div className='flex justify-between'>
-                 <h1 > {menu.name}</h1>
-                 <button className='p-1 pl-2 pr-2 border 2px  rounded-md bg-green-100' onClick={()=>handleadditem(menu)}>Add item</button>
+            <div className='mt-10 ml-10 mr-[200px] gap-2 border 2px rounded-xl shadow-lg shadow-slate-700 ' key={menu.id}>
+              <div className='m-5'>
+              <div className='flex justify-between '>
+                 <h1 className='text-black font-medium' > {menu.name}</h1>
+                 <button className='p-1 pl-2 pr-2 border 2px  rounded-md bg-green-100 hover:' onClick={()=>handleadditem(menu)}>Add item</button>
                  </div>
-                 <h1>Rs.{menu['sub-items'][0].price}</h1>
-                 <h1 className='text-gray-500'>{menu.description}</h1>
-                 
+                 <h1 className='text-black font-medium'>Rs.{menu['sub-items'][0].price}</h1>
+                 <h1 className='text-gray-500 mt-5'>{menu.description}</h1>
+                 </div>
             </div>
             ))}
           </div>
